@@ -13,3 +13,15 @@ Content-Type: application/json
     "password" : "passoifuu",
     "image" : "asd",
 }
+
+
+###
+
+POST  https://chat-backend-mreh.onrender.com/
+Content-Type: application/json
+{
+    "name" : "bac",
+    "email" : "abc",
+    "password" : "abc",
+    "image" : "abc",
+}

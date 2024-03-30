@@ -4,10 +4,10 @@ const createErrors = require("http-errors");
 const User = require("../models/users");
 const mongoose = require("mongoose");
 
-router.get("/:email", async (req, res, next) => {
-  const email = req.params.email;
+router.get("/signin", async (req, res, next) => {
+  const { email, password } = req.body;
   try {
-    const user = await User.findOne({ email: email }, {});
+    const user = await User.findOne({ email: email, password: password }, {});
 
     if (!user) {
       throw createErrors("404", "user not exist");

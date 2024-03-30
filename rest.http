@@ -1,0 +1,15 @@
+GET http://localhost:3000/aa
+
+
+
+
+###
+
+POST  http://localhost:3000/
+Content-Type: application/json
+{
+    "name" : "seas",
+    "email" : "aaaa",
+    "password" : "passoifuu",
+    "image" : "asd",
+}

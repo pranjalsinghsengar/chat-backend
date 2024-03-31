@@ -23,6 +23,25 @@ router.post("/signin", async (req, res, next) => {
   }
 });
 
+router.post("/search", async (req, res, next) => {
+  const { name } = req.body;
+  try {
+    const user = await User.findOne({ name: name }, {});
+
+    if (!user) {
+      throw createErrors("404", "user not exist");
+    }
+
+    res.send(user);
+  } catch (error) {
+    console.log(error);
+    if (error instanceof mongoose.CastError) {
+      next(createErrors("404", "Invalid email"));
+    }
+    next(error);
+  }
+});
+
 router.get("/users", async (req, res, next) => {
   try {
     const user = await User.find();

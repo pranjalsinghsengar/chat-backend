@@ -25,3 +25,14 @@ Content-Type: application/json
     "password" : "abc",
     "image" : "abc",
 }
+
+
+###
+
+POST  https://chat-backend-mreh.onrender.com/messages
+Content-Type: application/json
+{
+    "senderId"
+}
+
+

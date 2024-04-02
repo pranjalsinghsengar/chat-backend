@@ -28,6 +28,8 @@ mongoose
 //   mongodb+srv://sengar:<password>@cluster0.h8dnflv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 const UserRoute = require("./routes/User_route");
+const User = require("./models/users");
+
 app.use("/", UserRoute);
 
 app.use((err, req, res, next) => {
@@ -39,3 +41,5 @@ app.use((err, req, res, next) => {
     },
   });
 });
+
+

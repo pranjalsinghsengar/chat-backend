@@ -86,4 +86,21 @@ router.post("/", async (req, res, next) => {
   //   });
 });
 
+router.post("/friend-request", async (req, res, next) => {
+  const { currentUserId, selectedUserId } = req.body;
+
+  try {
+    await User.findByIdAndUpdate(selectedUserId, {
+      $push: { friendRequest: currentUserId },
+    });
+
+    await User.findByIdAndUpdate(currentUserId, {
+      $push: { sendFriendRequests: selectedUserId },
+    });
+    res.send({ status: "success" });
+  } catch (error) {
+    res.sendStatus(500);
+  }
+});
+
 module.exports = router;

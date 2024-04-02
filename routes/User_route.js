@@ -103,4 +103,16 @@ router.post("/friend-request", async (req, res, next) => {
   }
 });
 
+router.get("/friend-request/:userId", async (req, res, next) => {
+  const { userId } = req.params;
+
+  const user = await User.findById(userId)
+    .populate("friendRequest", "name email image")
+    .lean();
+
+  const friendRequest = user.friendRequest;
+
+  res.json(friendRequest);
+});
+
 module.exports = router;

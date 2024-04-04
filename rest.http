@@ -29,10 +29,10 @@ Content-Type: application/json
 
 ###
 
-POST  https://chat-backend-mreh.onrender.com/messages
-Content-Type: application/json
-{
-    "senderId"
-}
+# POST  https://chat-backend-mreh.onrender.com/messages
+# Content-Type: application/json
+# {
+#     "senderId"
+# }
 
 
